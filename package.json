@@ -1,8 +1,8 @@
 {
-  "name": "ffc-template-node",
+  "name": "ffc-find-sfi-checker",
   "version": "0.1.0",
-  "description": "description-of-project-goes-here",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "description": "Web frontend for SFI Checker",
+  "homepage": "https://github.com/DEFRA/ffc-find-sfi-checker",
   "main": "app/index.js",
   "scripts": {
     "pretest": "npm run test:lint",

@@ -1,9 +1,9 @@
 environment: production
 environmentCode:
-name: ffc-template-node
-namespace: ffc-demo
-workstream: ffc-demo
-image: ffc-template-node
+name: ffc-find-sfi-checker
+namespace: ffc-find
+workstream: ffc-find
+image: ffc-find-sfi-checker
 
 labels:
   component: service
@@ -12,10 +12,10 @@ appInsights:
   connectionString:
 
 containerConfigMap:
-  name: ffc-template-node-config-map
+  name: ffc-find-sfi-checker-config-map
 
 containerSecret:
-  name: ffc-template-node-container-secret
+  name: ffc-find-sfi-checker-container-secret
   type: Opaque
 
 deployment: {}

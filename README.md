@@ -1,35 +1,6 @@
-# FFC Template Node
+# FFC Find SFI Checker
 
-Template to support rapid delivery of microservices for FFC Platform. It contains the configuration needed to deploy a simple Hapi Node server to the Azure Kubernetes Platform.
-
-## Usage
-
-Create a new repository from this template and run `./rename.js` specifying the new name of the project and the description to use e.g.
-```
-./rename.js ffc-demo-web "Web frontend for demo workstream"
-```
-
-The script will update the following:
-
-* `package.json`: update `name`, `description`, `homepage`
-* `docker-compose.yaml`: update the service name, `image` and `container_name`
-* `docker-compose.test.yaml`: update the service name, `image` and `container_name`
-* `docker-compose.override.yaml`: update the service name, `image` and `container_name`
-* Rename `helm/ffc-template-node`
-* `helm/ffc-template-node/Chart.yaml`: update `description` and `name`
-* `helm/ffc-template-node/values.yaml`: update  `name`, `namespace`, `workstream`, `image`, `containerConfigMap.name`
-* `helm/ffc-template-node/templates/_container.yaml`: update the template name
-* `helm/ffc-template-node/templates/cluster-ip-service.yaml`: update the template name and list parameter of include
-* `helm/ffc-template-node/templates/config-map.yaml`: update the template name and list parameter of include
-* `helm/ffc-template-node/templates/deployment.yaml`: update the template name, list parameter of deployment and container includes
-
-### Notes on automated rename
-
-* The Helm chart deployment values in `helm/ffc-template-node/values.yaml` may need updating depending on the resource needs of your microservice
-* The rename is a one-way operation i.e. currently it doesn't allow the name being changed from to be specified
-* There is some validation on the input to try and ensure the rename is successful, however, it is unlikely to stand up to malicious entry
-* Once the rename has been performed the script can be removed from the repo
-* Should the rename go awry the changes can be reverted via `git clean -df && git checkout -- .`
+A web frontend to list funding grants (actions) farmers can get from the Sustainable Farming Incentive (SFI) to help them manage their land more sustainably and improve food production.
 
 ## Prerequisites
 
@@ -46,6 +17,14 @@ The application is designed to run in containerised environments, using Docker C
 
 - A Helm chart is provided for production deployments to Kubernetes.
 
+### Start
+
+Use Docker Compose to run service locally.
+
+```BASH
+docker-compose up
+```
+
 ### Build container image
 
 Container images are built using Docker Compose, with the same images used to run the service with either Docker Compose or Kubernetes.
@@ -59,17 +38,9 @@ rarely be a need to build images manually. However, this can be achieved
 through the Docker Compose
 [build](https://docs.docker.com/compose/reference/build/) command:
 
-```
+```BASH
 # Build container images
 docker-compose build
-```
-
-### Start
-
-Use Docker Compose to run service locally.
-
-```
-docker-compose up
 ```
 
 ## Test structure
@@ -87,7 +58,7 @@ arguments to the test script.
 
 Examples:
 
-```
+```BASH
 # Run all tests
 scripts/test
 

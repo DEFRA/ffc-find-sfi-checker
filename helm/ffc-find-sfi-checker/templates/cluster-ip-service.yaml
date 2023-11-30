@@ -1,0 +1,3 @@
+{{- include "ffc-helm-library.cluster-ip-service" (list . "ffc-find-sfi-checker.cluster-ip-service") -}}
+{{- define "ffc-find-sfi-checker.cluster-ip-service" -}}
+{{- end -}}
