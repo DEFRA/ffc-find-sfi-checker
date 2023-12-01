@@ -1,0 +1,16 @@
+{% extends "govuk/template.njk" %}
+
+{% block head %}
+    <link href="static/css/app.css" rel="stylesheet">
+{% endblock %}
+
+{% block bodyEnd %}
+    {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+    <script src="static/js/govuk.js"></script>
+    <script>
+        window
+            .GOVUKFrontend
+            .initAll()
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+{% endblock %}
