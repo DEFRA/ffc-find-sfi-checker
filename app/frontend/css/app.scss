@@ -1,0 +1,79 @@
+@import "../../../node_modules/govuk-frontend/govuk/all";
+@import "breakpoints";
+
+.govuk-secondary-text-colour {
+    color: $govuk-secondary-text-colour;
+}
+
+.title-link {
+    display: flex;
+
+    .title {
+        flex: 1;
+    }
+}
+
+.aside-container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("mobile-s") {
+        flex-direction: row;
+
+        .right {
+            text-align: right;
+        }
+    }
+
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        text-align: left;
+    }
+}
+
+.link-button {
+    color: #1d70b8;
+    text-decoration: underline;
+    background: transparent;
+    box-shadow: none;
+    padding: 0px;
+    margin-bottom: 0px;
+
+    &:visited {
+        color: #4c2c92;
+    }
+
+    &:hover {
+        color: #003078;
+        text-decoration: underline;
+        background: transparent;
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: 3px solid transparent;
+        color: #0b0c0c;
+        background-color: #ffdd00;
+        box-shadow:
+            0 -2px #ffdd00,
+            0 4px #0b0c0c;
+        text-decoration: none;
+    }
+}
+
+.expandable {
+    ::marker {
+        color: $govuk-link-colour;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+}

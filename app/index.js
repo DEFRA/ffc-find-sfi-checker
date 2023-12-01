@@ -1,7 +1,10 @@
-const server = require('./server')
+const createServer = require('./server')
 
 const init = async () => {
-  await server.start()
+  const server = await createServer();
+
+  await server.start();
+  
   console.log('Server running on %s', server.info.uri)
 }
 
