@@ -1,5 +1,118 @@
 {% extends "_layout.njk" %}
 
+{% from "components/list.njk" import filterList %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk/"
+      },
+      {
+        text: "Environment",
+        href: "https://www.gov.uk/environment"
+      },
+         {
+        text: "Food and farming",
+        href: "https://www.gov.uk/environment/food-and-farming"
+      },
+      {
+        text: "Farming and food grants and payments",
+        href: "https://www.gov.uk/environment/farming-food-grants-payments"
+      },
+      {
+        text: "Rural grants and payments",
+        href: "https://www.gov.uk/environment/farming-food-grants-payments-rural-grants-payments"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block content %}
-    Test content
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row govuk-!-margin-bottom-4">
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">Check funding you can get to manage your land and protect the environment</h1>
+
+        {% include 'components/sfi-information.njk' %}
+      </div>
+      <div class="govuk-grid-column-one-quarter"></div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <form method="GET" action="#list">
+
+          <div class="govuk-body">
+            <details class="expandable" open>
+              <summary class="govuk-body" style="display: list-item;">
+                <b class="title">Land types</b>
+              </summary>
+              <div>
+                {{ govukCheckboxes({
+                  name: "landTypes",
+                  classes: "govuk-checkboxes--small",
+                  items: landTypeItems
+                }) }}
+
+                {{ govukButton({
+                  text: 'Apply filters',
+                  type: 'submit',
+                  classes: "govuk-!-margin-bottom-2"
+                }) }}
+              </form>
+              <form action="/" method="GET">
+                {{ govukButton({
+                  text: "Clear filters",
+                  classes: "govuk-button--secondary"
+                }) }}
+              </form>
+            </div>
+          </details>
+        </div>
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-body" id="list" x-data="{ landTypes: [] }">
+          <div class="govuk-grid-row">
+            <div class="aside-container">
+              <div class="left">
+                <div class="govuk-!-padding-left-0 govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
+                  {{ sfiActions.length }}
+                  {% if sfiActions.length > 1 %}
+                    <span>actions</span>
+                  {% else %}
+                    <span>action</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="right govuk-body">
+                <form method="POST" action="/show/all" class="govuk-!-display-inline-block">
+                  {{ govukButton({
+                    text: "Show all actions",
+                    classes: "govuk-button--secondary link-button"
+                  }) }}
+                </form>
+                <form method="POST" action="{{ printLink }}" class="govuk-!-display-inline-block">
+                  {{ govukButton({
+                    text: "Print",
+                    classes: "govuk-button--secondary link-button"
+                  }) }}
+                </form>
+              </div>
+            </div>
+
+          </div>
+          <div class="govuk-grid-row">
+            {{ filterList(sfiActions, false) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

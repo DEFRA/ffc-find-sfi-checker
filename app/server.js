@@ -14,7 +14,7 @@ async function createServer () {
     },
     router: {
       stripTrailingSlash: true
-    },
+    }
   })
 
   // Register the plugins

@@ -1,0 +1,55 @@
+{% extends "_layout.njk" %}
+
+{% from "components/list.njk" import filterList %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk/"
+      },
+      {
+        text: "Environment",
+        href: "https://www.gov.uk/environment"
+      },
+         {
+        text: "Food and farming",
+        href: "https://www.gov.uk/environment/food-and-farming"
+      },
+      {
+        text: "Farming and food grants and payments",
+        href: "https://www.gov.uk/environment/farming-food-grants-payments"
+      },
+      {
+        text: "Rural grants and payments",
+        href: "https://www.gov.uk/environment/farming-food-grants-payments-rural-grants-payments"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="govuk-heading-xl">SFI Actions Finder</h1>
+
+    {{ govukInsetText({
+        text: "This service does not confirm your eligibility for SFI."
+    }) }}
+
+    <div class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
+        {{ sfiActions.length }}
+        {% if sfiActions.length > 1 %}
+            <span>actions</span>
+        {% else %}
+            <span>action</span>
+        {% endif %}
+    </div>
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            {{ filterList(sfiActions, true) }}
+        </div>
+    </div>
+{% endblock %}

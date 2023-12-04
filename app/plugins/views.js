@@ -15,14 +15,17 @@ module.exports = {
           }
         },
         prepare: (options, next) => {
-          options.compileOptions.environment = nunjucks.configure([
-            path.join(options.relativeTo || process.cwd(), ...options.path),
-            'app/views',
-            'node_modules/govuk-frontend/'
-          ], {
-            autoescape: true,
-            watch: false
-          })
+          options.compileOptions.environment = nunjucks.configure(
+            [
+              path.join(options.relativeTo || process.cwd(), ...options.path),
+              'app/views',
+              'node_modules/govuk-frontend/'
+            ],
+            {
+              autoescape: true,
+              watch: false
+            }
+          )
 
           return next()
         }
@@ -36,7 +39,7 @@ module.exports = {
       assetPath: '/static',
       govukAssetPath: '/assets',
       serviceName: 'FFC Demo Service',
-      pageTitle: 'FFC Demo Service - GOV.UK',
+      pageTitle: 'FFC Demo Service - GOV.UK'
       // googleTagManagerKey: config.googleTagManagerKey
     }
   }
