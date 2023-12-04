@@ -1,0 +1,29 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<div>
+    <p class="govuk-body">
+        Find out what funding you can get from the Sustainable Farming Incentive (SFI) to help you manage your land more sustainably and improve food production.
+    </p>
+
+    <p class="govuk-body">You can use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            filter and print actions you may want to apply for
+        </li>
+        <li>
+            hide actions that are not relevant to you 
+        </li>
+        <li>
+            access guidance on how to apply for funding for each action
+        </li>
+    </ul>
+
+    {{ govukInsetText({
+        text: "This service does not confirm your eligibility for SFI."
+    }) }}
+
+    <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/guidance/what-to-do-before-you-apply-for-an-sfi-agreement">Read the guidance on what to do before you apply for an SFI agreement.</a>
+    </p>
+
+</div>

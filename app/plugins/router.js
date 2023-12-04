@@ -1,15 +1,18 @@
 const routes = [].concat(
-    require('../routes/healthy'),
-    require('../routes/healthz'),
-    require('../routes/list-sfi'),
-    require('../routes/static')
+  require('../routes/healthy'),
+  require('../routes/healthz'),
+  require('../routes/list-sfi'),
+  require('../routes/hide'),
+  require('../routes/show'),
+  require('../routes/print'),
+  require('../routes/static')
 )
 
 module.exports = {
-    plugin: {
-        name: 'router',
-        register: (server, options) => {
-            server.route(routes)
-        }
+  plugin: {
+    name: 'router',
+    register: (server, options) => {
+      server.route(routes)
     }
+  }
 }

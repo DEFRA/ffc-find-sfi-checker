@@ -1,0 +1,56 @@
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% macro filterList(sfiActions, isPrintPage) %}
+  {% for sfiAction in sfiActions %}
+    {% set sfiLandTypes = sfiAction.landTypes  %}
+    <div class="govuk-body" id="{{ sfiAction.code }}">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      {% if sfiAction.hidden %}
+        <div class="title-link">
+          <div class="title">
+            <span class="govuk-body govuk-secondary-text-colour">{{ sfiAction.name }}</span>
+          </div>
+
+          <div class="toggle">
+            <form method="POST" action="/show/{{ sfiAction.code }}">
+              {{ govukButton({
+                text: "Show",
+                classes: "govuk-button--secondary link-button"
+              }) }}
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <div class="title-link">
+          <div class="title">
+            <a href="{{ sfiAction.url }}" target="_blank" class="govuk-link">{{ sfiAction.name }} - {{ sfiAction.code }}</a>
+          </div>
+          {% if not isPrintPage %}
+            <div class="toggle">
+              <form method="POST" action="/hide/{{ sfiAction.code }}">
+                {{ govukButton({
+                  text: "Hide",
+                  classes: "govuk-button--secondary link-button"
+                }) }}
+              </form>
+            </div>
+          {% endif %}
+        </div>
+
+        <p>
+          {{ sfiAction.overview }}
+        </p>
+
+        <p>
+          <span class="govuk-!-font-weight-bold">Land types: </span><span>{{ sfiLandTypes }}</span>
+        </p>
+
+        <p>
+          <span class="govuk-!-font-weight-bold">Annual payment: </span><span>{{ sfiAction.amountLabel }}</span>
+        </p>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endmacro %}

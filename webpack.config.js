@@ -1,6 +1,5 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
@@ -9,7 +8,7 @@ console.log(`Running webpack in ${isDev ? 'development' : 'production'} mode`)
 
 module.exports = {
   entry: {
-    core: './app/frontend/css/app.js',
+    core: './app/frontend/css/app.js'
     // cookies: './app/frontend/js/cookies.js'
   },
   mode: isDev ? 'development' : 'production',
