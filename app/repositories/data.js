@@ -52,7 +52,7 @@ const getSfiData = () => [
     code: 'MOR1',
     landTypes: [LandType.MOORLAND],
     landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
-    amountLabel: '£10.30 per hectare (ha) and £265 per SFI agreement per year',
+    amountLabel: '£10.30 per hectare and an additional payment of £265 per agreement per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
     overview:
       'Learn how your moorland helps protect the environment and how it can provide more benefits in the future.'
