@@ -3,7 +3,6 @@
 
 {% macro filterList(sfiActions, isPrintPage) %}
   {% for sfiAction in sfiActions %}
-    {% set sfiLandTypes = sfiAction.landTypes  %}
     <div class="govuk-body" id="{{ sfiAction.code }}">
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -44,7 +43,7 @@
         </p>
 
         <p>
-          <span class="govuk-!-font-weight-bold">Land types: </span><span>{{ sfiLandTypes }}</span>
+          <span class="govuk-!-font-weight-bold">Land types: </span><span>{{ sfiAction.landTypeLabel }}</span>
         </p>
 
         <p>
