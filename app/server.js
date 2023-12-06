@@ -1,7 +1,7 @@
 require('./insights').setup()
 const hapi = require('@hapi/hapi')
 
-async function createServer() {
+async function createServer () {
   // Create the hapi server
   const server = hapi.server({
     port: process.env.PORT || 3000,
