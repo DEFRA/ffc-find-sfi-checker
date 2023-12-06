@@ -6,7 +6,7 @@
   "main": "app/index.js",
   "scripts": {
     "build": "npm run css",
-    "css": "sass app/frontend/css/app.scss app/dist/css/app.css --quiet",
+    "css": "./node_modules/.bin/sass app/frontend/css/app.scss app/dist/css/app.css",
     "pretest": "npm run test:lint",
     "test": "jest --runInBand --forceExit",
     "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
@@ -24,7 +24,9 @@
     "@hapi/vision": "^7.0.3",
     "applicationinsights": "2.9.1",
     "govuk-frontend": "^4.7.0",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "sass": "1.67.0",
+    "sass-loader": "13.3.2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "4.0.0",
@@ -35,8 +37,6 @@
     "jest-junit": "16.0.0",
     "mini-css-extract-plugin": "2.7.6",
     "nodemon": "3.0.1",
-    "sass": "1.67.0",
-    "sass-loader": "13.3.2",
     "standard": "17.1.0",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4"
