@@ -4,4 +4,5 @@ helm/**/*.lock
 *.tgz
 .vscode
 .env
-app/dist
+app/dist/css/app.css
+app/dist/css/app.css.map
