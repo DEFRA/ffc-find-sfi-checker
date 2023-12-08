@@ -42,3 +42,8 @@ readinessProbe:
   periodSeconds: 10
   failureThreshold: 3
   timeoutSeconds: 5
+
+ingress:
+  class: nginx
+  endpoint: ffc-find-sfi-checker
+  server: example.com

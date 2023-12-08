@@ -1,0 +1,3 @@
+{{- include "ffc-helm-library.azure-ingress" (list . "ffc-find-sfi-checker.ingress") -}}
+{{- define "ffc-find-sfi-checker.ingress" -}}
+{{- end -}}
