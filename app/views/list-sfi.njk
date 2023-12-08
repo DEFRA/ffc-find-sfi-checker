@@ -46,7 +46,9 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <form method="GET" action="#list">
-
+          {% for hiddenSfi in hiddenSfis %}
+            <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
+          {% endfor %}
           <div class="govuk-body">
             <details class="expandable" open>
               <summary class="govuk-body" style="display: list-item;">
@@ -66,6 +68,9 @@
                 }) }}
               </form>
               <form action="/" method="GET">
+                {% for hiddenSfi in hiddenSfis %}
+                  <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
+                {% endfor %}
                 {{ govukButton({
                   text: "Clear filters",
                   classes: "govuk-button--secondary"

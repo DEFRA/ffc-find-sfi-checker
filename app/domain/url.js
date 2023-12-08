@@ -33,8 +33,31 @@ const constructUrl = (url, landTypes, hiddenSfis) => {
   return constructedUrl.href
 }
 
+const generatePrintLink = (landTypes, hiddenSfis) => {
+  let url = '/print?'
+
+  for (const [index, landType] of landTypes.entries()) {
+    url += `landTypes=${landType}`
+
+    if (index < landTypes.length) {
+      url += '&'
+    }
+  }
+
+  for (const [index, hiddenSfi] of hiddenSfis.entries()) {
+    url += `hiddenSfis=${hiddenSfi}`
+
+    if (index < hiddenSfis.length - 1) {
+      url += '&'
+    }
+  }
+
+  return url
+}
+
 module.exports = {
   getSelectedLandTypesFromUrl,
   getHiddenSfisFromUrl,
-  constructUrl
+  constructUrl,
+  generatePrintLink
 }

@@ -20,4 +20,7 @@ const retrieveSfiActions = (landTypes) => {
   return sfiActions
 }
 
-module.exports = retrieveSfiActions
+module.exports = {
+  containsLandTypes,
+  retrieveSfiActions
+}

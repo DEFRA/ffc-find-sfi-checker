@@ -1,19 +1,6 @@
-const retrieveSfiActions = require('../repositories/sfi-repository')
+const { retrieveSfiActions } = require('../repositories/sfi-repository')
 const { getLandTypeOptions } = require('../domain/filter-options')
-
-const generatePrintLink = (hiddenSfis) => {
-  let url = '/print?'
-
-  for (const [index, hiddenSfi] of hiddenSfis.entries()) {
-    url += `hiddenSfis=${hiddenSfi}`
-
-    if (index < hiddenSfis.length - 1) {
-      url += '&'
-    }
-  }
-
-  return url
-}
+const { generatePrintLink } = require('../domain/url')
 
 module.exports = {
   method: 'GET',
@@ -24,6 +11,7 @@ module.exports = {
     const landTypeItems = getLandTypeOptions(selectedLandTypes)
 
     const hiddenSfis = [].concat(request.query.hiddenSfis || [])
+
     const filteredSfiActions = sfiActions.map((sfiAction) => {
       if (hiddenSfis.includes(sfiAction.code)) {
         return {
@@ -38,7 +26,8 @@ module.exports = {
     return h.view('list-sfi', {
       sfiActions: filteredSfiActions,
       landTypeItems,
-      printLink: generatePrintLink(hiddenSfis)
+      hiddenSfis,
+      printLink: generatePrintLink(selectedLandTypes, hiddenSfis)
     })
   }
 }
