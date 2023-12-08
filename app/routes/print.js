@@ -1,4 +1,4 @@
-const retrieveSfiActions = require('../repositories/sfi-repository')
+const { retrieveSfiActions } = require('../repositories/sfi-repository')
 
 module.exports = {
   method: ['GET', 'POST'],
