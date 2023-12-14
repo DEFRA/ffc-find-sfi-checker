@@ -1,11 +1,11 @@
 {
   "name": "ffc-find-sfi-checker",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Web frontend for SFI Checker",
   "homepage": "https://github.com/DEFRA/ffc-find-sfi-checker",
   "main": "app/index.js",
   "scripts": {
-    "build": "npm run css",
+    "build": "npm run css && ./node_modules/.bin/webpack --config webpack.config.js",
     "css": "./node_modules/.bin/sass app/frontend/css/app.scss app/dist/css/app.css",
     "pretest": "npm run test:lint",
     "test": "jest --runInBand --forceExit",
@@ -29,6 +29,9 @@
     "sass-loader": "13.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "6.8.1",
     "file-loader": "6.2.0",

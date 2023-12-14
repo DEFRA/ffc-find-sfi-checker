@@ -6,4 +6,5 @@ helm/**/*.lock
 .env
 app/dist/css/app.css
 app/dist/css/app.css.map
+app/dist/js/entry.js
 .DS_Store
