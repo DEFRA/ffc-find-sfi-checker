@@ -19,9 +19,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.(?:s[ac]|c)ss$/i,
@@ -69,22 +69,10 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'app/dist/js'),
+    path: path.resolve(__dirname, 'app/dist/js')
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   inject: false,
-    //   filename: '../views/_layout.njk',
-    //   template: 'app/views/_layout.njk',
-    //   chunks: ['core']
-    // }),
-    // new HtmlWebpackPlugin({
-    //   inject: false,
-    //   filename: '../views/cookies/_cookie-banner.njk',
-    //   template: 'app/views/cookies/_cookie-banner.template.njk',
-    //   chunks: ['cookies']
-    // }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[fullhash].css'
     })
