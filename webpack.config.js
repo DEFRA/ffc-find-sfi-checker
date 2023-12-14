@@ -8,12 +8,21 @@ console.log(`Running webpack in ${isDev ? 'development' : 'production'} mode`)
 
 module.exports = {
   entry: {
-    core: './app/frontend/app.js'
-    // cookies: './app/frontend/js/cookies.js'
+    entry: './app/frontend/entry.js'
   },
   mode: isDev ? 'development' : 'production',
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
       {
         test: /\.(?:s[ac]|c)ss$/i,
         use: [
@@ -59,18 +68,17 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'js/[name].[fullhash].js',
-    path: path.resolve(__dirname, 'app/dist'),
-    publicPath: 'assets/'
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'app/dist/js'),
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      inject: false,
-      filename: '../views/_layout.njk',
-      template: 'app/views/_layout.njk',
-      chunks: ['core']
-    }),
+    // new HtmlWebpackPlugin({
+    //   inject: false,
+    //   filename: '../views/_layout.njk',
+    //   template: 'app/views/_layout.njk',
+    //   chunks: ['core']
+    // }),
     // new HtmlWebpackPlugin({
     //   inject: false,
     //   filename: '../views/cookies/_cookie-banner.njk',

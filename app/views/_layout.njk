@@ -8,12 +8,7 @@
 
 {% block bodyEnd %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
-  <script src="static/js/govuk.js"></script>
-  <script>
-    window
-      .GOVUKFrontend
-      .initAll()
-  </script>
+  <script src="static/js/entry.js"></script>
 {% endblock %}
 
 {% block footer %}
