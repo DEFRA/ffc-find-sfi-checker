@@ -5,7 +5,7 @@
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block beforeContent %}
-    {{ govukBreadcrumbs({
+  {{ govukBreadcrumbs({
     items: [
       {
         text: "Home",
@@ -32,24 +32,29 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="govuk-heading-xl">Check what SFI actions you can get paid to do on your land</h1>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">Check what SFI actions you can get paid to do on your land</h1>
 
-    {{ govukInsetText({
-        text: "This service does not confirm you're eligible to apply for SFI."
-    }) }}
-
-    <div class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
-        {{ sfiActions.length }}
-        {% if sfiActions.length > 1 %}
-            <span>actions</span>
-        {% else %}
-            <span>action</span>
-        {% endif %}
+        {{ govukInsetText({
+          text: "This service does not confirm you're eligible to apply for SFI."
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+        <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print page</a>
+      </div>
     </div>
 
-    <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            {{ filterList(sfiActions, true) }}
-        </div>
+    <div class="govuk-grid-row">
+      {{ filterList(sfiActions, true) }}
     </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var printButton = document.getElementById("printButton");
+      printButton.classList.remove("govuk-!-display-none");
+    });
+  </script>
 {% endblock %}

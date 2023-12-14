@@ -3,53 +3,55 @@
 
 {% macro filterList(sfiActions, isPrintPage) %}
   {% for sfiAction in sfiActions %}
-    <div class="govuk-body" id="{{ sfiAction.code }}">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    {% if not isPrintPage or not sfiAction.hidden %}
+      <div class="govuk-body" id="{{ sfiAction.code }}">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      {% if sfiAction.hidden %}
-        <div class="title-link">
-          <div class="title">
-            <span class="govuk-body govuk-secondary-text-colour">{{ sfiAction.name }} - {{ sfiAction.code }}</span>
-          </div>
+        {% if sfiAction.hidden %}
+          <div class="title-link">
+            <div class="title">
+              <span class="govuk-body govuk-secondary-text-colour">{{ sfiAction.name }} - {{ sfiAction.code }}</span>
+            </div>
 
-          <div class="toggle">
-            <form method="POST" action="/show/{{ sfiAction.code }}">
-              {{ govukButton({
+            <div class="toggle">
+              <form method="POST" action="/show/{{ sfiAction.code }}">
+                {{ govukButton({
                 text: "Show",
                 classes: "govuk-button--secondary link-button"
               }) }}
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
-      {% else %}
-        <div class="title-link">
-          <div class="title">
-            <a href="{{ sfiAction.url }}" target="_blank" class="govuk-link">{{ sfiAction.name }} - {{ sfiAction.code }}</a>
-          </div>
-          {% if not isPrintPage %}
-            <div class="toggle">
-              <form method="POST" action="/hide/{{ sfiAction.code }}">
-                {{ govukButton({
+        {% else %}
+          <div class="title-link">
+            <div class="title">
+              <a href="{{ sfiAction.url }}" target="_blank" class="govuk-link">{{ sfiAction.name }} - {{ sfiAction.code }}</a>
+            </div>
+            {% if not isPrintPage %}
+              <div class="toggle">
+                <form method="POST" action="/hide/{{ sfiAction.code }}">
+                  {{ govukButton({
                   text: "Hide",
                   classes: "govuk-button--secondary link-button"
                 }) }}
-              </form>
-            </div>
-          {% endif %}
-        </div>
+                </form>
+              </div>
+            {% endif %}
+          </div>
 
-        <p>
-          {{ sfiAction.overview }}
-        </p>
+          <p>
+            {{ sfiAction.overview }}
+          </p>
 
-        <p>
-          <span class="govuk-!-font-weight-bold">Land types: </span><span>{{ sfiAction.landTypeLabel }}</span>
-        </p>
+          <p>
+            <span class="govuk-!-font-weight-bold">Land types: </span><span>{{ sfiAction.landTypeLabel }}</span>
+          </p>
 
-        <p>
-          <span class="govuk-!-font-weight-bold">Annual payment: </span><span>{{ sfiAction.amountLabel }}</span>
-        </p>
-      {% endif %}
-    </div>
+          <p>
+            <span class="govuk-!-font-weight-bold">Annual payment: </span><span>{{ sfiAction.amountLabel }}</span>
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
   {% endfor %}
 {% endmacro %}
