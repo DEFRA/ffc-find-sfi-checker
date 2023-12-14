@@ -5,30 +5,7 @@
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "https://www.gov.uk/"
-      },
-      {
-        text: "Environment",
-        href: "https://www.gov.uk/environment"
-      },
-         {
-        text: "Food and farming",
-        href: "https://www.gov.uk/environment/food-and-farming"
-      },
-      {
-        text: "Farming and food grants and payments",
-        href: "https://www.gov.uk/environment/farming-food-grants-payments"
-      },
-      {
-        text: "Rural grants and payments",
-        href: "https://www.gov.uk/environment/farming-food-grants-payments-rural-grants-payments"
-      }
-    ]
-  }) }}
+  {% include 'components/breadcrumbs.njk' %}
 {% endblock %}
 
 {% block content %}
@@ -54,7 +31,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {
       var printButton = document.getElementById("printButton");
-      printButton.classList.remove("govuk-!-display-none");
+      printButton
+        .classList
+        .remove("govuk-!-display-none");
     });
   </script>
 {% endblock %}
