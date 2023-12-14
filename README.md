@@ -25,6 +25,8 @@ Use Docker Compose to run service locally.
 docker-compose up
 ```
 
+Go to http://localhost:3000
+
 ### Build container image
 
 Container images are built using Docker Compose, with the same images used to run the service with either Docker Compose or Kubernetes.
