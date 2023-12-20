@@ -18,7 +18,7 @@ const getHiddenSfisFromUrl = (url) => {
 }
 
 const getPath = (landTypes, hiddenSfis) => {
-  const url = config.serviceUri
+  const url = config.baseUrl
   const parsedUrl = new URL(url)
   const baseUrl = parsedUrl.origin
 
