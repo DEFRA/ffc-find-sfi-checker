@@ -71,12 +71,14 @@
               </div>
               <div class="right govuk-body">
                 <form method="POST" action="/show/all" class="govuk-!-display-inline-block">
+                  <input type="hidden" name="action" value="showAll"/>
                   {{ govukButton({
                     text: "Show all actions",
                     classes: "govuk-button--secondary link-button"
                   }) }}
                 </form>
                 <form method="POST" action="{{ printLink }}" class="govuk-!-display-inline-block">
+                  <input type="hidden" name="action" value="print"/>
                   {{ govukButton({
                     text: "Print",
                     classes: "govuk-button--secondary link-button"
