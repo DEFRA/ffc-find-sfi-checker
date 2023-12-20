@@ -4,7 +4,7 @@ module.exports = {
   method: ['GET', 'POST'],
   path: '/print',
   handler: async (request, h) => {
-    if (request.headers['content-length'] <= 0) {
+    if (request.route.method.toUpperCase() === 'POST' && request.headers['content-length'] <= 0) {
       throw new Error('Content length cannot be empty')
     }
 
