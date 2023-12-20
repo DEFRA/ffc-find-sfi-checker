@@ -1,4 +1,5 @@
 const { getLandTypeFromStrings } = require('./filter-options')
+const config = require('../config')
 
 const getSelectedLandTypesFromUrl = (url) => {
   const parsedUrl = new URL(url)
@@ -16,7 +17,8 @@ const getHiddenSfisFromUrl = (url) => {
   return params
 }
 
-const constructUrl = (url, landTypes, hiddenSfis) => {
+const getPath = (landTypes, hiddenSfis) => {
+  const url = config.serviceUri
   const parsedUrl = new URL(url)
   const baseUrl = parsedUrl.origin
 
@@ -30,7 +32,7 @@ const constructUrl = (url, landTypes, hiddenSfis) => {
     constructedUrl.searchParams.append('hiddenSfis', hiddenSfi)
   }
 
-  return constructedUrl.href
+  return constructedUrl.search
 }
 
 const generatePrintLink = (landTypes, hiddenSfis) => {
@@ -58,6 +60,6 @@ const generatePrintLink = (landTypes, hiddenSfis) => {
 module.exports = {
   getSelectedLandTypesFromUrl,
   getHiddenSfisFromUrl,
-  constructUrl,
+  getPath,
   generatePrintLink
 }

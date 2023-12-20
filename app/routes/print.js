@@ -8,6 +8,8 @@ module.exports = {
       throw new Error('Content length cannot be empty')
     }
 
+    const version = process.env.npm_package_version || ''
+
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)
 
@@ -24,6 +26,7 @@ module.exports = {
     })
 
     return h.view('print-page', {
+      version,
       sfiActions: filteredSfiActions
     })
   }

@@ -1,6 +1,6 @@
-const hideController = require('../../../app/routes/hide')
+const clearController = require('../../../app/routes/clear')
 
-describe('hide', () => {
+describe('clear', () => {
   let req
   let h
 
@@ -22,7 +22,7 @@ describe('hide', () => {
   })
 
   test('redirects back to list page with hidden sfi', () => {
-    hideController.handler(req, h)
+    clearController.handler(req, h)
 
     expect(h.redirect).toHaveBeenCalledWith('/?hiddenSfis=SAM1')
   })
@@ -35,7 +35,7 @@ describe('hide', () => {
       }
     }
 
-    expect(() => hideController.handler(modifiedReq, h))
+    expect(() => clearController.handler(modifiedReq, h))
       .toThrowError('Content length cannot be empty')
 
     expect(h.redirect).not.toHaveBeenCalled()

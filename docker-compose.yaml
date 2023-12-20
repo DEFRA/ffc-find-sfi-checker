@@ -8,3 +8,4 @@ services:
     environment:
       APPINSIGHTS_CLOUDROLE: ffc-find-sfi-checker-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      SERVICE_URI: http://localhost:3000

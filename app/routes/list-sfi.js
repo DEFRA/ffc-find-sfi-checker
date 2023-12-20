@@ -1,11 +1,14 @@
 const { retrieveSfiActions } = require('../repositories/sfi-repository')
 const { getLandTypeOptions } = require('../domain/filter-options')
 const { generatePrintLink } = require('../domain/url')
+const config = require('../config')
 
 module.exports = {
   method: 'GET',
   path: '/',
   handler: (request, h) => {
+    const version = process.env.npm_package_version || ''
+
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)
     const landTypeItems = getLandTypeOptions(selectedLandTypes)
@@ -27,7 +30,10 @@ module.exports = {
       sfiActions: filteredSfiActions,
       landTypeItems,
       hiddenSfis,
-      printLink: generatePrintLink(selectedLandTypes, hiddenSfis)
+      selectedLandTypes,
+      printLink: generatePrintLink(selectedLandTypes, hiddenSfis),
+      version,
+      serviceUri: config.serviceUri
     })
   }
 }

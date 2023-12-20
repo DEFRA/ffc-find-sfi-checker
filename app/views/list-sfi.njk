@@ -40,10 +40,15 @@
                   classes: "govuk-!-margin-bottom-2"
                 }) }}
               </form>
-              <form action="/" method="GET">
+              <form action="/clear" method="POST">
                 {% for hiddenSfi in hiddenSfis %}
                   <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
                 {% endfor %}
+
+                {% for landType in selectedLandTypes %}
+                  <input type="hidden" name="landTypes" value="{{landType}}"/>
+                {% endfor %}
+
                 {{ govukButton({
                   text: "Clear filters",
                   classes: "govuk-button--secondary"
@@ -72,13 +77,27 @@
               <div class="right govuk-body">
                 <form method="POST" action="/show/all" class="govuk-!-display-inline-block">
                   <input type="hidden" name="action" value="showAll"/>
+
+                  {% for landType in selectedLandTypes %}
+                    <input type="hidden" name="landTypes" value="{{landType}}"/>
+                  {% endfor %}
+
                   {{ govukButton({
                     text: "Show all actions",
                     classes: "govuk-button--secondary link-button"
                   }) }}
                 </form>
                 <form method="POST" action="{{ printLink }}" class="govuk-!-display-inline-block">
+                  {% for landType in selectedLandTypes %}
+                    <input type="hidden" name="landTypes" value="{{landType}}"/>
+                  {% endfor %}
+
+                  {% for hiddenSfi in hiddenSfis %}
+                    <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
+                  {% endfor %}
+
                   <input type="hidden" name="action" value="print"/>
+
                   {{ govukButton({
                     text: "Print",
                     classes: "govuk-button--secondary link-button"
@@ -89,7 +108,8 @@
 
           </div>
           <div class="govuk-grid-row">
-            {{ filterList(sfiActions, false) }}
+            <span class="govuk-visually-hidden">{{ serviceUri }}</span>
+            {{ filterList(sfiActions, false, hiddenSfis, selectedLandTypes) }}
           </div>
         </div>
       </div>

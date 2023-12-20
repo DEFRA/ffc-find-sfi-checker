@@ -2,7 +2,7 @@ const { LandType } = require('../../../app/domain/sfi')
 const {
   getSelectedLandTypesFromUrl,
   getHiddenSfisFromUrl,
-  constructUrl,
+  getPath,
   generatePrintLink
 } = require('../../../app/domain/url')
 
@@ -27,14 +27,14 @@ describe('url', () => {
     })
   })
 
-  describe('constructUrl', () => {
+  describe('getPath', () => {
     test('returns url with landTypes and hiddenSfis', () => {
       const hiddenSfis = ['SAM1', 'SAM2']
       const landTypes = [LandType.ARABLE, LandType.MOORLAND]
 
-      const url = constructUrl('https://example.com', landTypes, hiddenSfis)
+      const url = getPath(landTypes, hiddenSfis)
 
-      expect(url).toBe('https://example.com/?landTypes=Arable&landTypes=Moorland&hiddenSfis=SAM1&hiddenSfis=SAM2')
+      expect(url).toBe('?landTypes=Arable&landTypes=Moorland&hiddenSfis=SAM1&hiddenSfis=SAM2')
     })
   })
 
