@@ -6,7 +6,7 @@ module.exports = [
     path: '/show/{action}',
     handler: (request, h) => {
       if (request.headers['content-length'] <= 0) {
-        throw new Error('Content length cannot be empty');
+        throw new Error('Content length cannot be empty')
       }
 
       const lastUrl = request.info.referrer
@@ -34,7 +34,7 @@ module.exports = [
     path: '/show/all',
     handler: (request, h) => {
       if (request.headers['content-length'] <= 0) {
-        throw new Error('Content length cannot be empty');
+        throw new Error('Content length cannot be empty')
       }
 
       const lastUrl = request.info.referrer

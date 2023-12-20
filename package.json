@@ -58,7 +58,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "**/test-output/**"
+      "**/test-output/**",
+      "**/app/dist/js/**"
     ]
   }
 }
