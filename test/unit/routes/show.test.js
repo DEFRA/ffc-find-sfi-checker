@@ -7,12 +7,10 @@ describe('show', () => {
   beforeEach(() => {
     req = {
       headers: jest.fn(),
-      info: {
-        referrer: 'https://example.com'
-      },
       params: {
         action: 'SAM1'
-      }
+      },
+      payload: {}
     }
 
     h = {
@@ -24,7 +22,7 @@ describe('show', () => {
     test('redirects back to list page with hidden sfi removed', () => {
       showController[0].handler(req, h)
 
-      expect(h.redirect).toHaveBeenCalledWith('https://example.com/')
+      expect(h.redirect).toHaveBeenCalledWith('/')
     })
 
     test('throws an error when receiving content length of zero', () => {
@@ -35,8 +33,7 @@ describe('show', () => {
         }
       }
 
-      expect(() => showController[0].handler(modifiedReq, h))
-        .toThrowError('Content length cannot be empty')
+      expect(() => showController[0].handler(modifiedReq, h)).toThrowError('Content length cannot be empty')
 
       expect(h.redirect).not.toHaveBeenCalled()
     })
@@ -46,7 +43,7 @@ describe('show', () => {
     test('redirects back to list page with all hidden sfi removed', () => {
       showController[1].handler(req, h)
 
-      expect(h.redirect).toHaveBeenCalledWith('https://example.com/')
+      expect(h.redirect).toHaveBeenCalledWith('/')
     })
 
     test('throws an error when receiving content length of zero', () => {
@@ -57,8 +54,7 @@ describe('show', () => {
         }
       }
 
-      expect(() => showController[1].handler(modifiedReq, h))
-        .toThrowError('Content length cannot be empty')
+      expect(() => showController[1].handler(modifiedReq, h)).toThrowError('Content length cannot be empty')
 
       expect(h.redirect).not.toHaveBeenCalled()
     })

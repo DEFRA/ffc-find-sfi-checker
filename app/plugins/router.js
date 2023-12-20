@@ -4,6 +4,7 @@ const routes = [].concat(
   require('../routes/list-sfi'),
   require('../routes/hide'),
   require('../routes/show'),
+  require('../routes/clear'),
   require('../routes/print'),
   require('../routes/static')
 )

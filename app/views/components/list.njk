@@ -1,7 +1,7 @@
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{% macro filterList(sfiActions, isPrintPage) %}
+{% macro filterList(sfiActions, isPrintPage, hiddenSfis, landTypes) %}
   {% for sfiAction in sfiActions %}
     {% if not isPrintPage or not sfiAction.hidden %}
       <div class="govuk-body" id="{{ sfiAction.code }}">
@@ -15,7 +15,16 @@
 
             <div class="toggle">
               <form method="POST" action="/show/{{ sfiAction.code }}">
+                {% for landType in landTypes %}
+                  <input type="hidden" name="landTypes" value="{{landType}}"/>
+                {% endfor %}
+
+                {% for hiddenSfi in hiddenSfis %}
+                  <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
+                {% endfor %}
+
                 <input type="hidden" name="action" value="{{ sfiAction.code }}"/>
+
                 {{ govukButton({
                   text: "Show",
                   classes: "govuk-button--secondary link-button"
@@ -31,7 +40,16 @@
             {% if not isPrintPage %}
               <div class="toggle">
                 <form method="POST" action="/hide/{{ sfiAction.code }}">
+                  {% for landType in landTypes %}
+                    <input type="hidden" name="landTypes" value="{{landType}}"/>
+                  {% endfor %}
+
+                  {% for hiddenSfi in hiddenSfis %}
+                    <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
+                  {% endfor %}
+
                   <input type="hidden" name="action" value="{{ sfiAction.code }}"/>
+
                   {{ govukButton({
                     text: "Hide",
                     classes: "govuk-button--secondary link-button"

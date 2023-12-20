@@ -38,8 +38,8 @@ module.exports = {
       appVersion: version,
       assetPath: '/static',
       govukAssetPath: '/assets',
-      serviceName: 'FFC Demo Service',
-      pageTitle: 'FFC Demo Service - GOV.UK'
+      serviceName: 'Check what SFI actions you can get paid to do on your land',
+      pageTitle: 'Check what SFI actions you can get paid to do on your land - GOV.UK'
       // googleTagManagerKey: config.googleTagManagerKey
     }
   }

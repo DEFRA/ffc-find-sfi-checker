@@ -11,9 +11,6 @@ describe('print', () => {
         landTypes: [],
         hiddenSfis: []
       },
-      info: {
-        referrer: 'https://example.com'
-      },
       params: {
         action: 'SAM1'
       },

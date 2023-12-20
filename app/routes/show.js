@@ -1,4 +1,4 @@
-const { getSelectedLandTypesFromUrl, getHiddenSfisFromUrl, constructUrl } = require('../domain/url')
+const { getPath } = require('../domain/url')
 
 module.exports = [
   {
@@ -9,11 +9,10 @@ module.exports = [
         throw new Error('Content length cannot be empty')
       }
 
-      const lastUrl = request.info.referrer
       const action = request.params.action
 
-      const landTypes = getSelectedLandTypesFromUrl(lastUrl)
-      const hiddenSfis = getHiddenSfisFromUrl(lastUrl)
+      const landTypes = [].concat(request.payload.landTypes || [])
+      const hiddenSfis = [].concat(request.payload.hiddenSfis || [])
       const modifedHiddenSfis = hiddenSfis
         .map((hiddenSfi) => {
           if (hiddenSfi !== action) {
@@ -24,9 +23,9 @@ module.exports = [
         })
         .filter((hiddenSfis) => hiddenSfis !== undefined)
 
-      const url = constructUrl(lastUrl, landTypes, modifedHiddenSfis)
+      const path = getPath(landTypes, modifedHiddenSfis)
 
-      return h.redirect(url)
+      return h.redirect(`/${path}`)
     }
   },
   {
@@ -37,12 +36,11 @@ module.exports = [
         throw new Error('Content length cannot be empty')
       }
 
-      const lastUrl = request.info.referrer
-      const landTypes = getSelectedLandTypesFromUrl(lastUrl)
+      const landTypes = [].concat(request.payload.landTypes || [])
 
-      const url = constructUrl(lastUrl, landTypes, [])
+      const path = getPath(landTypes, [])
 
-      return h.redirect(url)
+      return h.redirect(`/${path}`)
     }
   }
 ]
