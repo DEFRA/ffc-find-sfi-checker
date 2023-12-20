@@ -15,10 +15,11 @@
 
             <div class="toggle">
               <form method="POST" action="/show/{{ sfiAction.code }}">
+                <input type="hidden" name="action" value="{{ sfiAction.code }}"/>
                 {{ govukButton({
-                text: "Show",
-                classes: "govuk-button--secondary link-button"
-              }) }}
+                  text: "Show",
+                  classes: "govuk-button--secondary link-button"
+                }) }}
               </form>
             </div>
           </div>
@@ -30,10 +31,11 @@
             {% if not isPrintPage %}
               <div class="toggle">
                 <form method="POST" action="/hide/{{ sfiAction.code }}">
+                  <input type="hidden" name="action" value="{{ sfiAction.code }}"/>
                   {{ govukButton({
-                  text: "Hide",
-                  classes: "govuk-button--secondary link-button"
-                }) }}
+                    text: "Hide",
+                    classes: "govuk-button--secondary link-button"
+                  }) }}
                 </form>
               </div>
             {% endif %}

@@ -4,6 +4,10 @@ module.exports = {
   method: 'POST',
   path: '/hide/{action}',
   handler: (request, h) => {
+    if (request.headers['content-length'] <= 0) {
+      throw new Error('Content length cannot be empty')
+    }
+
     const lastUrl = request.info.referrer
     const action = request.params.action
 
