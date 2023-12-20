@@ -7,7 +7,7 @@ module.exports = {
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    const version = process.env.npm_package_version || ''
+    const version = config.version
 
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)

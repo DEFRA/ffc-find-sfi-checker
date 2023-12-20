@@ -1,4 +1,5 @@
 const { retrieveSfiActions } = require('../repositories/sfi-repository')
+const config = require('../config')
 
 module.exports = {
   method: ['GET', 'POST'],
@@ -8,7 +9,7 @@ module.exports = {
       throw new Error('Content length cannot be empty')
     }
 
-    const version = process.env.npm_package_version || ''
+    const version = config.version
 
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)
