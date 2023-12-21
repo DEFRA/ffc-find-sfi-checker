@@ -26,7 +26,8 @@ container:
   limitMemory: 100Mi
   limitCpu: 100m
   port: 3000
-  serviceUri: dummy
+  serviceUri: placeholder
+  googleTagManagerKey: placeholder
 
 livenessProbe:
   path: /healthz
