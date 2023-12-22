@@ -19,6 +19,7 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
+    "@hapi/cookie": "^11.0.2",
     "@hapi/hapi": "21.3.2",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",

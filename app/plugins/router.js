@@ -6,6 +6,7 @@ const routes = [].concat(
   require('../routes/show'),
   require('../routes/clear'),
   require('../routes/print'),
+  require('../routes/submit-cookies'),
   require('../routes/static')
 )
 
