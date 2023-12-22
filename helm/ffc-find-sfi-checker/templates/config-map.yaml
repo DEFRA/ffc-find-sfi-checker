@@ -6,4 +6,5 @@ data:
   APPINSIGHTS_CLOUDROLE: {{ quote .Values.name }}
   SERVICE_URI: {{ quote .Values.container.serviceUri }}
   GOOGLE_TAG_MANAGER_KEY: {{ quote .Values.container.googleTagManagerKey }}
+  COOKIE_PASSWORD: {{ quote .Values.container.cookiePassword }}
 {{- end -}}
