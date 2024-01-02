@@ -22,7 +22,7 @@ describe('sfi-repository', () => {
             ],
             landTypeLabel:
               'arable land including temporary grassland, horticultural and non-horticultural permanent crops, improved and low input permanent grassland',
-            amountLabel: '£5.80 per hectare and an additional payment of £95 per agreement',
+            amountLabel: '£6 per hectare and an additional payment of £97 per agreement per year',
             url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#soil-1',
             overview:
               'Review the condition of your soil and plan how you can improve its long-term health, productivity and resilience.'
@@ -41,7 +41,7 @@ describe('sfi-repository', () => {
           code: 'MOR1',
           landTypes: [LandType.MOORLAND],
           landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
-          amountLabel: '£10.30 per hectare and an additional payment of £265 per agreement per year',
+          amountLabel: '£10.60 per hectare and an additional payment of £272 per agreement per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
           overview:
             'Learn how your moorland helps protect the environment and how it can provide more benefits in the future.'
@@ -59,7 +59,7 @@ describe('sfi-repository', () => {
           code: 'MOR1',
           landTypes: [LandType.MOORLAND],
           landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
-          amountLabel: '£10.30 per hectare and an additional payment of £265 per agreement per year',
+          amountLabel: '£10.60 per hectare and an additional payment of £272 per agreement per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
           overview:
             'Learn how your moorland helps protect the environment and how it can provide more benefits in the future.'
@@ -69,7 +69,7 @@ describe('sfi-repository', () => {
           code: 'HRW1',
           landTypes: [LandType.HEDGEROWS],
           landTypeLabel: 'one side or both sides of an eligible hedgerow',
-          amountLabel: '£3 per 100 metres',
+          amountLabel: '£5 per 100 metres for one side of an eligible hedgerow per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw1-assess-and-record-hedgerow-condition',
           overview: 'Review how healthy your hedgerows are and how you can improve their condition.'
         },
@@ -78,7 +78,7 @@ describe('sfi-repository', () => {
           code: 'HRW2',
           landTypes: [LandType.HEDGEROWS],
           landTypeLabel: 'one side or both sides of an eligible hedgerow',
-          amountLabel: '£10 per 100 metres for one side of an eligible hedgerow per year',
+          amountLabel: '£13 per 100 metres for one side of an eligible hedgerow per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw2-manage-hedgerows',
           overview:
             "Look after your hedgerows so there's a range of different heights and widths. This helps provide habitats and pollen, nectar and berries for wildlife."
