@@ -1,0 +1,31 @@
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+<p class="govuk-body">We'd like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+<form action="submit-cookies" method="POST">
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on SFI Checker",
+    messages: [ 
+      {
+        headingText: "Cookies on SFI Checker",
+        html: html,
+        actions: [
+          {
+            text: "Accept additional cookies",
+            type: "submit",
+            name: "cookies[additional]",
+            value: "yes"
+          },
+          {
+            text: "Reject additional cookies",
+            type: "submit",
+            name: "cookies[additional]",
+            value: "no"
+          }
+        ]
+      }
+    ]
+  }) }}
+</form>

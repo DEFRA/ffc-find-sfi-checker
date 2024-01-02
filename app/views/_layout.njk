@@ -8,6 +8,12 @@
 
 {% block pageTitle %}Check what SFI actions you can get paid to do on your land{% endblock %}
 
+{% block bodyStart %}
+  {% if not cookiesPolicy.confirmed %}
+    {% include 'components/cookie-banner.njk' %}
+  {% endif %}
+{% endblock %}
+
 {% block beforeContent %}
   {% include 'components/breadcrumbs.njk' %}
 {% endblock %}
@@ -15,6 +21,9 @@
 {% block bodyEnd %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   <script src="static/js/entry.js"></script>
+  {% if cookiesPolicy.analytics %}
+    {% include 'components/tag-manager.njk' %}
+  {% endif %}
 {% endblock %}
 
 {% block footer %}

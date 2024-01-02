@@ -29,8 +29,12 @@ async function createServer () {
   // Register the plugins
   await server.register(require('@hapi/inert'))
 
+  await server.register(require('@hapi/cookie'))
   await server.register(require('./plugins/views'))
   await server.register(require('./plugins/router'))
+  await server.register(require('./plugins/cookies'))
+  await server.register(require('./plugins/analytics'))
+  await server.register(require('./plugins/version'))
   // await server.register({
   //   plugin: require('./plugins/header'),
   //   options: {

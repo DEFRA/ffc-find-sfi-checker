@@ -1,0 +1,31 @@
+{% extends "_layout.njk" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% block pageTitle %}Cookies - Check what SFI actions you can get paid to do on your land{% endblock %}
+
+{% block bodyStart %}
+  {% include 'components/cookie-banner.njk' %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">Cookie settings</h1>
+
+        <div class="govuk-body">We use Google Analytics cookies to measure how you use GOV.UK and government digital services.</div>
+
+        <div class="govuk-body">These cookies collect information about:</div>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>how you got to these sites</li>
+          <li>the pages you visit and how long you spend on each page</li>
+          <li>what you click on while you're visiting these sites</li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-text-align-right"></div>
+    </div>
+  </div>
+{% endblock %}

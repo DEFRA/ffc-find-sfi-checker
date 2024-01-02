@@ -7,8 +7,6 @@ module.exports = {
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    const version = config.version
-
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)
     const landTypeItems = getLandTypeOptions(selectedLandTypes)
@@ -32,7 +30,6 @@ module.exports = {
       hiddenSfis,
       selectedLandTypes,
       printLink: generatePrintLink(selectedLandTypes, hiddenSfis),
-      version,
       serviceUri: config.serviceUri
     })
   }

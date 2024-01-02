@@ -1,5 +1,4 @@
 const { retrieveSfiActions } = require('../repositories/sfi-repository')
-const config = require('../config')
 
 module.exports = {
   method: ['GET', 'POST'],
@@ -8,8 +7,6 @@ module.exports = {
     if (request.route.method.toUpperCase() === 'POST' && request.headers['content-length'] <= 0) {
       throw new Error('Content length cannot be empty')
     }
-
-    const version = config.version
 
     const selectedLandTypes = [].concat(request.query.landTypes || [])
     const sfiActions = retrieveSfiActions(selectedLandTypes)
@@ -27,7 +24,6 @@ module.exports = {
     })
 
     return h.view('print-page', {
-      version,
       sfiActions: filteredSfiActions
     })
   }
