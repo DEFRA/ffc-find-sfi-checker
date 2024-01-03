@@ -1,6 +1,8 @@
 @import "../../../node_modules/govuk-frontend/govuk/all";
 @import "breakpoints";
 
+@import "components/super-header";
+
 .govuk-secondary-text-colour {
     color: $govuk-secondary-text-colour;
 }
