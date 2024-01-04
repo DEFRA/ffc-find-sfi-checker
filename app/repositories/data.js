@@ -22,7 +22,7 @@ const getSfiData = () => [
       LandType.LOW_INPUT_GRASSLAND
     ],
     landTypeLabel: 'arable land including temporary grassland, horticultural and non-horticultural permanent crops, improved and low input permanent grassland',
-    amountLabel: '£5.80 per hectare and an additional payment of £95 per agreement',
+    amountLabel: '£6 per hectare and an additional payment of £97 per agreement per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#soil-1',
     overview:
       'Review the condition of your soil and plan how you can improve its long-term health, productivity and resilience.'
@@ -52,7 +52,7 @@ const getSfiData = () => [
     code: 'MOR1',
     landTypes: [LandType.MOORLAND],
     landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
-    amountLabel: '£10.30 per hectare and an additional payment of £265 per agreement per year',
+    amountLabel: '£10.60 per hectare and an additional payment of £272 per agreement per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
     overview:
       'Learn how your moorland helps protect the environment and how it can provide more benefits in the future.'
@@ -62,7 +62,7 @@ const getSfiData = () => [
     code: 'HRW1',
     landTypes: [LandType.HEDGEROWS],
     landTypeLabel: 'one side or both sides of an eligible hedgerow',
-    amountLabel: '£3 per 100 metres',
+    amountLabel: '£5 per 100 metres for one side of an eligible hedgerow per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw1-assess-and-record-hedgerow-condition',
     overview: 'Review how healthy your hedgerows are and how you can improve their condition.'
   },
@@ -71,7 +71,7 @@ const getSfiData = () => [
     code: 'HRW2',
     landTypes: [LandType.HEDGEROWS],
     landTypeLabel: 'one side or both sides of an eligible hedgerow',
-    amountLabel: '£10 per 100 metres for one side of an eligible hedgerow per year',
+    amountLabel: '£13 per 100 metres for one side of an eligible hedgerow per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw2-manage-hedgerows',
     overview:
       'Look after your hedgerows so there\'s a range of different heights and widths. This helps provide habitats and pollen, nectar and berries for wildlife.'
@@ -98,7 +98,7 @@ const getSfiData = () => [
       LandType.LOW_INPUT_GRASSLAND
     ],
     landTypeLabel: 'all agricultural land located below the moorland line',
-    amountLabel: '£989 per year',
+    amountLabel: '£1,129 per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm1-assess-integrated-pest-management-and-produce-a-plan',
     overview:
       'Learn about the benefits, costs and risks of how you manage pests, weeds and diseases. This action also helps you plan the best approach for managing them on your land.'
@@ -106,9 +106,9 @@ const getSfiData = () => [
   {
     name: 'Flower-rich grass margins, blocks, or in-field strips',
     code: 'IPM2',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS, LandType.NON_HORICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural and non-horticultural permanent crops',
-    amountLabel: '£673 per hectare per year',
+    amountLabel: '£798 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm2-flower-rich-grass-margins-blocks-or-in-field-strips',
     overview:
       'Make sure grass margins, blocks or in-field strips contain flowering plants during summer and early autumn. This encourages natural crop pest predators, provides habitats and foraging sites for bees, butterflies, hoverflies and birds.'
@@ -126,7 +126,7 @@ const getSfiData = () => [
   {
     name: 'No use of insecticide on arable crops and permanent crops',
     code: 'IPM4',
-    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS, LandType.NON_HORICULTURAL_CROPS],
     landTypeLabel: 'arable land excluding temporary grassland and fallow land, horticultural and non-horticultural permanent crops',
     amountLabel: '£45 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm4-no-use-of-insecticide-on-arable-crops-and-permanent-crops',
@@ -145,7 +145,7 @@ const getSfiData = () => [
       LandType.LOW_INPUT_GRASSLAND
     ],
     landTypeLabel: 'all agricultural land located below the moorland line',
-    amountLabel: '£589 per year',
+    amountLabel: '£652 per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-nutrient-management#num1-assess-nutrient-management-and-produce-a-review-report',
     overview:
       'Review how you currently use nutrients on your land and how you can do this most effectively. This action will also help you plan how you can maximise your use of organic sources of crop nutrients.'
@@ -175,7 +175,7 @@ const getSfiData = () => [
     code: 'AHL1',
     landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
-    amountLabel: '£614 per hectare per year',
+    amountLabel: '£764 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl1-pollen-and-nectar-flower-mix',
     overview:
       "Make sure there's a pollen and nectar flower mix that produces flowering plants during late spring and summer. This will provide food for bees, butterflies and hoverflies. It can also help encourage natural crop pest predators."
@@ -185,7 +185,7 @@ const getSfiData = () => [
     code: 'AHL2',
     landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
-    amountLabel: '£732 per hectare per year',
+    amountLabel: '£853 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl2-winter-bird-food-on-arable-and-horticultural-land',
     overview:
       "Make sure there's food available for birds from late autumn to late winter. This action will encourage flowering plants in the summer which will benefit bees, butterflies and hoverflies. It can also help you with pest management."
@@ -205,7 +205,7 @@ const getSfiData = () => [
     code: 'AHL4',
     landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
-    amountLabel: '£451 per hectare per year',
+    amountLabel: '£515 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-buffer-strips#ahl4-4m-to-12m-grass-buffer-strip-on-arable-and-horticultural-land',
     overview:
       'Make sure your land has a grass buffer strip with an intact grass sward all year round. This action helps protect existing landscape and heritage features, provide habitats and prevent pollutants such as sediment and nutrients from getting into water. It can also help you with pest management.'
@@ -225,7 +225,7 @@ const getSfiData = () => [
     code: 'IGL2',
     landTypes: [LandType.TEMPORARY_GRASSLAND, LandType.IMPROVED_GRASSLAND],
     landTypeLabel: 'temporary grassland, improved permanent grassland',
-    amountLabel: '£474 per hectare per year',
+    amountLabel: '£515 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-improved-grassland#igl2-winter-bird-food-on-improved-grassland',
     overview:
       'Allow improved grassland to go to seed during autumn and winter. This will help provide food for birds during the winter.'
@@ -245,7 +245,6 @@ const getSfiData = () => [
     code: 'LIG1',
     landTypes: [
       LandType.TEMPORARY_GRASSLAND,
-      LandType.NON_HORICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
@@ -260,7 +259,6 @@ const getSfiData = () => [
     code: 'LIG2',
     landTypes: [
       LandType.TEMPORARY_GRASSLAND,
-      LandType.NON_HORICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],

@@ -25,7 +25,7 @@ module.exports = [
 
       const path = getPath(landTypes, modifedHiddenSfis)
 
-      return h.redirect(`/${path}`)
+      return h.redirect(`/${path}#${action}`)
     }
   },
   {
@@ -40,7 +40,7 @@ module.exports = [
 
       const path = getPath(landTypes, [])
 
-      return h.redirect(`/${path}`)
+      return h.redirect(`/${path}#list`)
     }
   }
 ]

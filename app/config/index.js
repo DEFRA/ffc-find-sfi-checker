@@ -1,7 +1,7 @@
 const config = {
   serviceUri: process.env.SERVICE_URI,
   baseUrl: 'https://gov.uk',
-  version: '1.0.12',
+  version: '1.0.13',
   googleTagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
   cookie: {
     cookieNameCookiePolicy: 'sfi_cookie_policy',
