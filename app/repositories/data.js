@@ -106,7 +106,7 @@ const getSfiData = () => [
   {
     name: 'Flower-rich grass margins, blocks, or in-field strips',
     code: 'IPM2',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS, LandType.NON_HORICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural and non-horticultural permanent crops',
     amountLabel: '£798 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm2-flower-rich-grass-margins-blocks-or-in-field-strips',
@@ -126,7 +126,7 @@ const getSfiData = () => [
   {
     name: 'No use of insecticide on arable crops and permanent crops',
     code: 'IPM4',
-    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS, LandType.NON_HORICULTURAL_CROPS],
     landTypeLabel: 'arable land excluding temporary grassland and fallow land, horticultural and non-horticultural permanent crops',
     amountLabel: '£45 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm4-no-use-of-insecticide-on-arable-crops-and-permanent-crops',
@@ -245,7 +245,6 @@ const getSfiData = () => [
     code: 'LIG1',
     landTypes: [
       LandType.TEMPORARY_GRASSLAND,
-      LandType.NON_HORICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
@@ -260,7 +259,6 @@ const getSfiData = () => [
     code: 'LIG2',
     landTypes: [
       LandType.TEMPORARY_GRASSLAND,
-      LandType.NON_HORICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
