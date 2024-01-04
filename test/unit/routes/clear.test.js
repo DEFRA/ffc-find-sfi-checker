@@ -1,3 +1,4 @@
+const { LandType } = require('../../../app/domain/sfi')
 const clearController = require('../../../app/routes/clear')
 
 describe('clear', () => {
@@ -7,13 +8,14 @@ describe('clear', () => {
   beforeEach(() => {
     req = {
       headers: jest.fn(),
-      params: {
-        action: 'SAM1'
+      params: {},
+      payload: {
+        hiddenSfis: 'SAM1',
+        landTypes: [LandType.ARABLE]
       },
       route: {
         method: 'post'
-      },
-      payload: {}
+      }
     }
 
     h = {
@@ -21,10 +23,10 @@ describe('clear', () => {
     }
   })
 
-  test('redirects back to list page with hidden sfi', () => {
+  test('redirects back to list page without any land type filters and while preserving hidden sfis', () => {
     clearController.handler(req, h)
 
-    expect(h.redirect).toHaveBeenCalledWith('/?hiddenSfis=SAM1')
+    expect(h.redirect).toHaveBeenCalledWith('/?hiddenSfis=SAM1#list')
   })
 
   test('throws an error when receiving content length of zero', () => {
@@ -35,8 +37,7 @@ describe('clear', () => {
       }
     }
 
-    expect(() => clearController.handler(modifiedReq, h))
-      .toThrowError('Content length cannot be empty')
+    expect(() => clearController.handler(modifiedReq, h)).toThrowError('Content length cannot be empty')
 
     expect(h.redirect).not.toHaveBeenCalled()
   })

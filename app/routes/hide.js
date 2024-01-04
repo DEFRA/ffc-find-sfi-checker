@@ -16,6 +16,6 @@ module.exports = {
 
     const path = getPath(landTypes, hiddenSfis)
 
-    return h.redirect(`/${path}`)
+    return h.redirect(`/${path}#${action}`)
   }
 }

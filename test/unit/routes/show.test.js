@@ -22,7 +22,7 @@ describe('show', () => {
     test('redirects back to list page with hidden sfi removed', () => {
       showController[0].handler(req, h)
 
-      expect(h.redirect).toHaveBeenCalledWith('/')
+      expect(h.redirect).toHaveBeenCalledWith('/#SAM1')
     })
 
     test('throws an error when receiving content length of zero', () => {
@@ -43,7 +43,7 @@ describe('show', () => {
     test('redirects back to list page with all hidden sfi removed', () => {
       showController[1].handler(req, h)
 
-      expect(h.redirect).toHaveBeenCalledWith('/')
+      expect(h.redirect).toHaveBeenCalledWith('/#list')
     })
 
     test('throws an error when receiving content length of zero', () => {

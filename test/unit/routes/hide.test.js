@@ -24,7 +24,7 @@ describe('hide', () => {
   test('redirects back to list page with hidden sfi', () => {
     hideController.handler(req, h)
 
-    expect(h.redirect).toHaveBeenCalledWith('/?hiddenSfis=SAM1')
+    expect(h.redirect).toHaveBeenCalledWith('/?hiddenSfis=SAM1#SAM1')
   })
 
   test('throws an error when receiving content length of zero', () => {
