@@ -6,10 +6,6 @@
 
 {% block pageTitle %}Print - Check what SFI actions you can get paid to do on your land{% endblock %}
 
-{% block beforeContent %}
-  {% include 'components/breadcrumbs.njk' %}
-{% endblock %}
-
 {% block content %}
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
@@ -20,22 +16,12 @@
           text: "This service does not confirm you're eligible to apply for SFI."
         }) }}
       </div>
-      <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
-        <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print page</a>
-      </div>
+      <div class="govuk-grid-column-one-quarter govuk-!-text-align-right"></div>
     </div>
 
     <div class="govuk-grid-row">
+      <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print page</a>
       {{ filterList(sfiActions, true) }}
     </div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-      var printButton = document.getElementById("printButton");
-      printButton
-        .classList
-        .remove("govuk-!-display-none");
-    });
-  </script>
 {% endblock %}

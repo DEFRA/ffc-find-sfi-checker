@@ -5,6 +5,8 @@
 {% endset %}
 
 <form action="submit-cookies" method="POST">
+  <input type="hidden" name="crumb" value="{{crumb}}"/>
+
   {{ govukCookieBanner({
     ariaLabel: "Cookies on Check what SFI actions you can get paid to do on your land",
     messages: [ 

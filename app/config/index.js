@@ -1,7 +1,8 @@
 const config = {
   serviceUri: process.env.SERVICE_URI,
   baseUrl: 'https://gov.uk',
-  version: '1.0.14',
+  version: '1.0.15',
+  indexOption: process.env.INDEX_OPTION || 'noindex, nofollow', // 'all' will allow search engines to crawl. 'noindex, nofollow' will prevent crawl
   googleTagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
   cookie: {
     cookieNameCookiePolicy: 'sfi_cookie_policy',

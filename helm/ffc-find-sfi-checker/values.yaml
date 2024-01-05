@@ -29,6 +29,7 @@ container:
   serviceUri: placeholder
   googleTagManagerKey: placeholder
   cookiePassword: placeholder
+  indexOption: noindex, nofollow
 
 livenessProbe:
   path: /healthz

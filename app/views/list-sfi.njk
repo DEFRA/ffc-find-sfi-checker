@@ -24,7 +24,7 @@
           {% endfor %}
           <div class="govuk-body">
             <details class="expandable" open>
-              <summary class="govuk-body" style="display: list-item;">
+              <summary class="govuk-body landTypeFilter">
                 <b class="title">Land types</b>
               </summary>
               <div>
@@ -41,6 +41,8 @@
                 }) }}
               </form>
               <form action="/clear" method="POST">
+                <input type="hidden" name="crumb" value="{{crumb}}"/>
+
                 {% for hiddenSfi in hiddenSfis %}
                   <input type="hidden" name="hiddenSfis" value="{{hiddenSfi}}"/>
                 {% endfor %}
@@ -76,6 +78,7 @@
               </div>
               <div class="right govuk-body">
                 <form method="POST" action="/show/all" class="govuk-!-display-inline-block">
+                  <input type="hidden" name="crumb" value="{{crumb}}"/>
                   <input type="hidden" name="action" value="showAll"/>
 
                   {% for landType in selectedLandTypes %}
@@ -88,6 +91,8 @@
                   }) }}
                 </form>
                 <form method="POST" action="{{ printLink }}" class="govuk-!-display-inline-block">
+                  <input type="hidden" name="crumb" value="{{crumb}}"/>
+
                   {% for landType in selectedLandTypes %}
                     <input type="hidden" name="landTypes" value="{{landType}}"/>
                   {% endfor %}
