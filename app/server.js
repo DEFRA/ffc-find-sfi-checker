@@ -29,7 +29,7 @@ async function createServer () {
   })
 
   // Register the plugins
-  if (process.env.NODE_ENV !== 'test') {
+  if (config.env !== 'test') {
     // Running unit tests with crumb enabled is causing an issue
     await server.register(require('./plugins/crumb'))
   }

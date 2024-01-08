@@ -1,4 +1,5 @@
 const config = {
+  env: process.env.NODE_ENV,
   serviceUri: process.env.SERVICE_URI,
   baseUrl: 'https://gov.uk',
   version: '1.0.15',
@@ -18,7 +19,8 @@ const config = {
     isSameSite: 'Lax',
     isSecure: process.env.NODE_ENV === 'production',
     password: process.env.COOKIE_PASSWORD
-  }
+  },
+  urlPrefix: ''
 }
 
 module.exports = config
