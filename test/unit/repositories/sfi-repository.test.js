@@ -16,7 +16,7 @@ describe('sfi-repository', () => {
               LandType.ARABLE,
               LandType.TEMPORARY_GRASSLAND,
               LandType.HORICULTURAL_CROPS,
-              LandType.NON_HORICULTURAL_CROPS,
+              LandType.NON_HORTICULTURAL_CROPS,
               LandType.IMPROVED_GRASSLAND,
               LandType.LOW_INPUT_GRASSLAND
             ],

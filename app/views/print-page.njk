@@ -1,7 +1,6 @@
 {% extends "_layout.njk" %}
 
 {% from "components/list.njk" import filterList %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block pageTitle %}Print - Check what SFI actions you can get paid to do on your land{% endblock %}
@@ -12,6 +11,10 @@
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">Check what SFI actions you can get paid to do on your land</h1>
 
+        <div class="govuk-body">
+          <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print this page</a>
+        </div>
+
         {{ govukInsetText({
           text: "This service does not confirm you're eligible to apply for SFI."
         }) }}
@@ -20,7 +23,6 @@
     </div>
 
     <div class="govuk-grid-row">
-      <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print page</a>
       {{ filterList(sfiActions, true) }}
     </div>
   </div>
