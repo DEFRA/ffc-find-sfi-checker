@@ -1,13 +1,4 @@
-const LandType = {
-  ARABLE: 'Arable',
-  TEMPORARY_GRASSLAND: 'TemporaryGrassland',
-  HORICULTURAL_CROPS: 'HoriculturalCrops',
-  NON_HORICULTURAL_CROPS: 'NonHoriculturalCrops',
-  IMPROVED_GRASSLAND: 'ImprovedGrassland',
-  LOW_INPUT_GRASSLAND: 'LowInputGrassland',
-  MOORLAND: 'Moorland',
-  HEDGEROWS: 'Hedgerows'
-}
+const { LandType } = require('../domain/sfi')
 
 const getSfiData = () => [
   {
@@ -16,8 +7,8 @@ const getSfiData = () => [
     landTypes: [
       LandType.ARABLE,
       LandType.TEMPORARY_GRASSLAND,
-      LandType.HORICULTURAL_CROPS,
-      LandType.NON_HORICULTURAL_CROPS,
+      LandType.HORTICULTURAL_CROPS,
+      LandType.NON_HORTICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
@@ -31,7 +22,7 @@ const getSfiData = () => [
   {
     name: 'Multi-species winter cover crop',
     code: 'SAM2',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£129 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#sam2-multi-species-winter-cover',
@@ -93,8 +84,8 @@ const getSfiData = () => [
     landTypes: [
       LandType.ARABLE,
       LandType.TEMPORARY_GRASSLAND,
-      LandType.HORICULTURAL_CROPS,
-      LandType.NON_HORICULTURAL_CROPS,
+      LandType.HORTICULTURAL_CROPS,
+      LandType.NON_HORTICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
@@ -110,8 +101,8 @@ const getSfiData = () => [
     landTypes: [
       LandType.ARABLE,
       LandType.TEMPORARY_GRASSLAND,
-      LandType.HORICULTURAL_CROPS,
-      LandType.NON_HORICULTURAL_CROPS
+      LandType.HORTICULTURAL_CROPS,
+      LandType.NON_HORTICULTURAL_CROPS
     ],
     landTypeLabel: 'arable land including temporary grassland, horticultural and non-horticultural permanent crops',
     amountLabel: '£798 per hectare per year',
@@ -122,7 +113,7 @@ const getSfiData = () => [
   {
     name: 'Companion crop on arable and horticultural land',
     code: 'IPM3',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£55 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm3-companion-crop-on-arable-and-horticultural-land',
@@ -132,7 +123,7 @@ const getSfiData = () => [
   {
     name: 'No use of insecticide on arable crops and permanent crops',
     code: 'IPM4',
-    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS, LandType.NON_HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.HORTICULTURAL_CROPS, LandType.NON_HORTICULTURAL_CROPS],
     landTypeLabel:
       'arable land excluding temporary grassland and fallow land, horticultural and non-horticultural permanent crops',
     amountLabel: '£45 per hectare per year',
@@ -146,8 +137,8 @@ const getSfiData = () => [
     landTypes: [
       LandType.ARABLE,
       LandType.TEMPORARY_GRASSLAND,
-      LandType.HORICULTURAL_CROPS,
-      LandType.NON_HORICULTURAL_CROPS,
+      LandType.HORTICULTURAL_CROPS,
+      LandType.NON_HORTICULTURAL_CROPS,
       LandType.IMPROVED_GRASSLAND,
       LandType.LOW_INPUT_GRASSLAND
     ],
@@ -170,7 +161,7 @@ const getSfiData = () => [
   {
     name: 'Legume fallow',
     code: 'NUM3',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£593 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-nutrient-management#num3-legume-fallow',
@@ -180,7 +171,7 @@ const getSfiData = () => [
   {
     name: 'Pollen and nectar flower mix',
     code: 'AHL1',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£764 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl1-pollen-and-nectar-flower-mix',
@@ -190,7 +181,7 @@ const getSfiData = () => [
   {
     name: 'Winter bird food on arable and horticultural land',
     code: 'AHL2',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£853 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl2-winter-bird-food-on-arable-and-horticultural-land',
@@ -200,7 +191,7 @@ const getSfiData = () => [
   {
     name: 'Grassy field corners or blocks',
     code: 'AHL3',
-    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£590 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl3-grassy-field-corners-or-blocks',
@@ -210,7 +201,7 @@ const getSfiData = () => [
   {
     name: '4m to 12m grass buffer strip on arable and horticultural land',
     code: 'AHL4',
-    landTypes: [LandType.ARABLE, LandType.HORICULTURAL_CROPS],
+    landTypes: [LandType.ARABLE, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
     amountLabel: '£515 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-buffer-strips#ahl4-4m-to-12m-grass-buffer-strip-on-arable-and-horticultural-land',
