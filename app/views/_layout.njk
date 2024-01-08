@@ -22,7 +22,7 @@
 
 {% block header %}
   {{ superHeader({
-        homepageUrl: "/",
+        homepageUrl: "https://www.gov.uk",
         navigation: [
             {
                 "text": "enabled"
@@ -35,9 +35,9 @@
 {% block bodyEnd %}
   {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
   <script src="static/js/entry.js"></script>
-  {# {% if cookiesPolicy.analytics %}
+  {% if cookiesPolicy.analytics %}
     {% include 'components/tag-manager.njk' %}
-  {% endif %} #}
+  {% endif %}
 {% endblock %}
 
 {% block footer %}
