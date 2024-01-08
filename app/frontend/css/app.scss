@@ -74,8 +74,13 @@
         color: $govuk-link-colour;
     }
 
-    .title {
-        font-size: 24px;
-        margin-left: 10px;
+    .landTypeFilter {
+        display: list-item;
+        cursor: pointer;
+
+        .title {
+            font-size: 24px;
+            margin-left: 10px;
+        }
     }
 }

@@ -2,6 +2,13 @@ const {
   cookie: { cookieNameCookiePolicy }
 } = require('./config')
 
+const cookieOptions = {
+  isSecure: true,
+  isHttpOnly: true,
+  strictHeader: true,
+  sameSite: 'strict'
+}
+
 function getCurrentPolicy (request, h) {
   let cookiesPolicy = request.state[cookieNameCookiePolicy]
 
@@ -14,7 +21,7 @@ function getCurrentPolicy (request, h) {
 
 function createDefaultPolicy (h) {
   const cookiesPolicy = { confirmed: false, essential: true, analytics: false }
-  h.state(cookieNameCookiePolicy, cookiesPolicy)
+  h.state(cookieNameCookiePolicy, cookiesPolicy, cookieOptions)
 
   return cookiesPolicy
 }
@@ -25,7 +32,7 @@ function updatePolicy (request, h, analytics) {
   cookiesPolicy.analytics = analytics
   cookiesPolicy.confirmed = true
 
-  h.state(cookieNameCookiePolicy, cookiesPolicy)
+  h.state(cookieNameCookiePolicy, cookiesPolicy, cookieOptions)
 
   if (!analytics) {
     removeAnalytics(request, h)
