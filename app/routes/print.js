@@ -1,4 +1,5 @@
 const { retrieveSfiActions } = require('../repositories/sfi-repository')
+const config = require('../config')
 
 module.exports = {
   method: ['GET', 'POST'],
@@ -24,7 +25,8 @@ module.exports = {
     })
 
     return h.view('print-page', {
-      sfiActions: filteredSfiActions
+      sfiActions: filteredSfiActions,
+      serviceUri: config.serviceUri
     })
   }
 }
