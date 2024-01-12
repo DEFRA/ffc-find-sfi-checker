@@ -1,6 +1,7 @@
 require('./insights').setup()
 const hapi = require('@hapi/hapi')
 const config = require('./config')
+const catbox = require('@hapi/catbox-memory')
 
 const getSecurityPolicy = () =>
   "default-src 'self';" +
@@ -15,6 +16,14 @@ const getSecurityPolicy = () =>
 async function createServer () {
   // Create the hapi server
   const server = hapi.server({
+    cache: [
+      {
+        name: 'memoryCache',
+        provider: {
+          constructor: catbox.Engine
+        }
+      }
+    ],
     port: process.env.PORT || 3000,
     routes: {
       validate: {
@@ -51,7 +60,7 @@ async function createServer () {
         { key: 'X-XSS-Protection', value: '1; mode=block' },
         { key: 'X-Robots-Tag', value: config.indexOption },
         { key: 'Strict-Transport-Security', value: 'max-age=31536000;' },
-        { key: 'Cache-Control', value: 'no-cache' },
+        { key: 'Cache-Control', value: 'private' },
         { key: 'Referrer-Policy', value: 'no-referrer' },
         {
           key: 'Content-Security-Policy',
