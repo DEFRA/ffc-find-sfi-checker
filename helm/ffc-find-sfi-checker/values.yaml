@@ -18,7 +18,16 @@ containerSecret:
   name: ffc-find-sfi-checker-container-secret
   type: Opaque
 
-deployment: {}
+deployment:
+  restartPolicy: Always
+  priorityClassName: high
+  minReadySeconds: 2
+  redeployOnChange: update this field to force a change
+  replicas: 2
+  minReplicas: 2
+  maxReplicas: 4
+  cpuThreshold: 80
+  memoryThreshold: 80
 
 container:
   requestMemory: 300Mi
