@@ -1,4 +1,4 @@
-const { serviceName, serviceTitle } = require('../config')
+const { serviceName, serviceTitle, serviceUri } = require('../config')
 
 const localVars = [
   {
@@ -8,6 +8,10 @@ const localVars = [
   {
     key: 'serviceTitle',
     value: serviceTitle
+  },
+  {
+    key: 'serviceUri',
+    value: serviceUri
   }
 ]
 
