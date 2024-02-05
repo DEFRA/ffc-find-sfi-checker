@@ -1,12 +1,13 @@
 {
   "name": "ffc-find-sfi-checker",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Web frontend for SFI Checker",
   "homepage": "https://github.com/DEFRA/ffc-find-sfi-checker",
   "main": "app/index.js",
   "scripts": {
     "build": "npm run css && ./node_modules/.bin/webpack --config webpack.config.js",
     "css": "./node_modules/.bin/sass app/frontend/css/app.scss app/dist/css/app.css",
+    "postbuild": "touch app/dist/js/.keep",
     "pretest": "npm run test:lint",
     "test": "NODE_ENV=test jest --runInBand --forceExit",
     "test:watch": "NODE_ENV=test jest --coverage=false --onlyChanged --watch --runInBand",
@@ -59,7 +60,8 @@
       "afterAll"
     ],
     "ignore": [
-      "app/frontend/entry.js"
+      "app/frontend/entry.js",
+      "app/frontend/super-header.js"
     ]
   },
   "nodemonConfig": {

@@ -2,6 +2,7 @@
 @import "breakpoints";
 
 @import "components/super-header";
+@import "components/defra-header";
 
 .govuk-secondary-text-colour {
     color: $govuk-secondary-text-colour;
@@ -82,7 +83,9 @@
             outline: 3px solid transparent;
             color: #0b0c0c;
             background-color: #ffdd00;
-            box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+            box-shadow:
+                0 -2px #ffdd00,
+                0 4px #0b0c0c;
             text-decoration: none;
         }
 
@@ -91,4 +94,22 @@
             margin-left: 10px;
         }
     }
+}
+
+body,
+.govuk-body,
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+.govuk-list,
+.govuk-inset-text,
+.govuk-label,
+.govuk-button,
+.govuk-link,
+.govuk-footer__link,
+.govuk-breadcrumbs__link,
+.govuk-header__service-name,
+.govuk-footer {
+    font-family: "Helvetica", "Arial", sans-serif !important;
 }

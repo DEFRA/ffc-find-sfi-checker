@@ -1,4 +1,4 @@
-{% from "components/super-header-macro.njk" import superHeader %}
+{% from "components/macro-defra-header.njk" import defraHeader %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
@@ -8,7 +8,8 @@
   <link href="static/css/app.css" rel="stylesheet">
 {% endblock %}
 
-{% block pageTitle %}Check what SFI actions you can get paid to do on your land{% endblock %}
+{% block pageTitle %}{{ serviceTitle }}
+{% endblock %}
 
 {% block bodyStart %}
   {% if not cookiesPolicy.confirmed %}
@@ -21,15 +22,10 @@
 {% endblock %}
 
 {% block header %}
-  {{ superHeader({
-        homepageUrl: "https://www.gov.uk",
-        navigation: [
-            {
-                "text": "enabled"
-            }
-        ]
-    }) }}
-  <div class="gem-c-layout-for-public__blue-bar govuk-width-container"></div>
+  {{ defraHeader({
+    homepageUrl: serviceUrl,
+    serviceName: serviceName
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}

@@ -1,8 +1,10 @@
 const config = {
   env: process.env.NODE_ENV,
+  serviceName: 'SFI actions you can get paid for',
+  serviceTitle: 'Check what SFI actions you can get paid to do on your land',
   serviceUri: process.env.SERVICE_URI,
-  baseUrl: 'https://gov.uk',
-  version: '1.0.23',
+  baseUrl: 'https://check-what-SFI-actions-you-can-get-paid-to-do.defra.gov.uk',
+  version: '1.0.24',
   indexOption: process.env.INDEX_OPTION || 'noindex, nofollow', // 'all' will allow search engines to crawl. 'noindex, nofollow' will prevent crawl
   googleTagManagerKey: process.env.GOOGLE_TAG_MANAGER_KEY,
   cookie: {
