@@ -3,7 +3,9 @@
 {% from "components/list.njk" import filterList %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-{% block pageTitle %}Print - Check what SFI actions you can get paid to do on your land{% endblock %}
+{% block pageTitle %}
+Print - {{ serviceTitle }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-width-container">
