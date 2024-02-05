@@ -10,7 +10,6 @@ module.exports = {
     '<rootDir>/jest.config.js',
     '<rootDir>/webpack.config.js',
     '<rootDir>/rename.js',
-    '<rootDir>/app/frontend/super-header.js',
     '<rootDir>/app/dist'
   ],
   modulePathIgnorePatterns: ['node_modules'],
@@ -27,5 +26,6 @@ module.exports = {
   ],
   testEnvironment: 'node',
   testPathIgnorePatterns: [],
-  verbose: true
+  verbose: true,
+  setupFilesAfterEnv: ['<rootDir>/test/setup.js', '<rootDir>/test/teardown.js']
 }
