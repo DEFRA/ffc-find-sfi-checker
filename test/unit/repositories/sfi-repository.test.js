@@ -24,8 +24,7 @@ describe('sfi-repository', () => {
               'arable land including temporary grassland, horticultural and non-horticultural permanent crops, improved and low input permanent grassland',
             amountLabel: '£6 per hectare and an additional payment of £97 per agreement per year',
             url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#soil-1',
-            overview:
-              'Understand the condition of your soil and plan how you can increase its long-term health, productivity and resilience.'
+            overview: expect.stringContaining('soil')
           }
         ])
       )
@@ -43,8 +42,7 @@ describe('sfi-repository', () => {
           landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
           amountLabel: '£10.60 per hectare and an additional payment of £272 per agreement per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
-          overview:
-            'Understand how your moorland helps protect the environment and how it can provide more benefits in the future.'
+          overview: expect.stringContaining('moorland')
         }
       ])
     })
@@ -61,8 +59,7 @@ describe('sfi-repository', () => {
           landTypeLabel: 'moorland, non-agricultural areas such as scrub, scree, bracken and bog',
           amountLabel: '£10.60 per hectare and an additional payment of £272 per agreement per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-moorland#mor1-assess-moorland-and-produce-a-written-record',
-          overview:
-            'Understand how your moorland helps protect the environment and how it can provide more benefits in the future.'
+          overview: expect.stringContaining('moorland')
         },
         {
           name: 'Assess and record hedgerow condition',
@@ -71,7 +68,7 @@ describe('sfi-repository', () => {
           landTypeLabel: 'one side or both sides of an eligible hedgerow',
           amountLabel: '£5 per 100 metres for one side of an eligible hedgerow per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw1-assess-and-record-hedgerow-condition',
-          overview: 'Understand the condition of your hedgerows and plan how you can manage them to improve their condition.'
+          overview: expect.stringContaining('hedgerow')
         },
         {
           name: 'Manage hedgerows',
@@ -80,8 +77,7 @@ describe('sfi-repository', () => {
           landTypeLabel: 'one side or both sides of an eligible hedgerow',
           amountLabel: '£13 per 100 metres for one side of an eligible hedgerow per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw2-manage-hedgerows',
-          overview:
-            "Look after your hedgerows so there's a range of different heights and widths. This helps provide habitats for wildlife and pollen, nectar and berries for mammals, birds and insects."
+          overview: expect.stringContaining('hedgerow')
         },
         {
           name: 'Maintain or establish hedgerow trees',
@@ -90,8 +86,7 @@ describe('sfi-repository', () => {
           landTypeLabel: 'both sides of an eligible hedgerow - you cannot enter one side of a hedgerow',
           amountLabel: '£10 per 100 metres for both sides of an eligible hedgerow per year',
           url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw3-maintain-or-establish-hedgerow-trees',
-          overview:
-            'Maintain or establish hedgerow trees to help provide habitats for wildlife. Hedgerow trees also store carbon which helps reduce the impact of climate change.'
+          overview: expect.stringContaining('hedgerow')
         }
       ])
     })

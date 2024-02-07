@@ -16,8 +16,7 @@ const getSfiData = () => [
       'arable land including temporary grassland, horticultural and non-horticultural permanent crops, improved and low input permanent grassland',
     amountLabel: '£6 per hectare and an additional payment of £97 per agreement per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#soil-1',
-    overview:
-      'Understand your soil\'s condition and plan how you can increase its long-term health.'
+    overview: "Understand your soil's condition and plan how you can increase its long-term health."
   },
   {
     name: 'Multi-species winter cover',
@@ -27,7 +26,7 @@ const getSfiData = () => [
     amountLabel: '£129 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#sam2-multi-species-winter-cover',
     overview:
-      "Establish and maintain a multi-species cover crop over winter. This will help protect and improve the health of your soil."
+      'Establish and maintain a multi-species cover crop over winter. This will help protect and improve the health of your soil.'
   },
   {
     name: 'Herbal leys',
@@ -37,7 +36,7 @@ const getSfiData = () => [
     amountLabel: '£382 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-soils#sam3-herbal-leys',
     overview:
-      "Establish and maintain herbal leys with a mixture of grasses, legumes and herbs. This will help improve and maintain the health of your soil."
+      'Establish and maintain herbal leys with a mixture of grasses, legumes and herbs. This will help improve and maintain the health of your soil.'
   },
   {
     name: 'Assess moorland and produce a written record',
@@ -56,7 +55,8 @@ const getSfiData = () => [
     landTypeLabel: 'one side or both sides of an eligible hedgerow',
     amountLabel: '£5 per 100 metres for one side of an eligible hedgerow per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-hedgerows#hrw1-assess-and-record-hedgerow-condition',
-    overview: 'Understand the condition of your hedgerows. Complete a written hedgerow condition assessment document that shows how you\'ll manage your hedgerows in the future.'
+    overview:
+      "Understand the condition of your hedgerows. Complete a written hedgerow condition assessment document that shows how you'll manage your hedgerows in the future."
   },
   {
     name: 'Manage hedgerows',
@@ -93,7 +93,7 @@ const getSfiData = () => [
     amountLabel: '£1,129 per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm1-assess-integrated-pest-management-and-produce-a-plan',
     overview:
-      'Arrange for a BASIS qualified adviser to visit your farm and assess your current approach to crop pest, weed and disease management. They\'ll complete an integrated pest management (IPM) assessment and will help you produce a written IPM plan.'
+      "Arrange for a BASIS qualified adviser to visit your farm and assess your current approach to crop pest, weed and disease management. They'll complete an integrated pest management (IPM) assessment and will help you produce a written IPM plan."
   },
   {
     name: 'Flower-rich grass margins, blocks, or in-field strips',
@@ -118,7 +118,7 @@ const getSfiData = () => [
     amountLabel: '£55 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-integrated-pest-management#ipm3-companion-crop-on-arable-and-horticultural-land',
     overview:
-      'Establish a companion crop, so it\'s growing with the main arable or horticultural crop. This will help you manage pests and provide habitats for wildlife. It\'ll also help you use nutrients efficiently, protect and improve your soil\'s health.'
+      "Establish a companion crop, so it's growing with the main arable or horticultural crop. This will help you manage pests and provide habitats for wildlife. It'll also help you use nutrients efficiently, protect and improve your soil's health."
   },
   {
     name: 'No use of insecticide on arable crops and permanent crops',
@@ -146,7 +146,7 @@ const getSfiData = () => [
     amountLabel: '£652 per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-nutrient-management#num1-assess-nutrient-management-and-produce-a-review-report',
     overview:
-      'Arrange for a Fertiliser Advisers Certification and Training Scheme (FACTS) qualified adviser to visit your farm. They\'ll complete a nutrient management (NM) assessment and will help you produce a written NM review report. This will help you manage your nutrient usage more efficiently and increase your use of organic crop nutrients.'
+      "Arrange for a Fertiliser Advisers Certification and Training Scheme (FACTS) qualified adviser to visit your farm. They'll complete a nutrient management (NM) assessment and will help you produce a written NM review report. This will help you manage your nutrient usage more efficiently and increase your use of organic crop nutrients."
   },
   {
     name: 'Legumes on improved grassland',
@@ -176,7 +176,7 @@ const getSfiData = () => [
     amountLabel: '£764 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl1-pollen-and-nectar-flower-mix',
     overview:
-      "Establish and maintain blocks or strips of pollen and nectar flower mix that produce areas of flowering plants from late spring and during the summer. This will help you provide food for wildlife and manage pests."
+      'Establish and maintain blocks or strips of pollen and nectar flower mix that produce areas of flowering plants from late spring and during the summer. This will help you provide food for wildlife and manage pests.'
   },
   {
     name: 'Winter bird food on arable and horticultural land',
@@ -186,7 +186,7 @@ const getSfiData = () => [
     amountLabel: '£853 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl2-winter-bird-food-on-arable-and-horticultural-land',
     overview:
-      "Establish and maintain blocks or strips of winter bird food. This will produce small seeds for smaller farmland birds from late autumn until late winter."
+      'Establish and maintain blocks or strips of winter bird food. This will produce small seeds for smaller farmland birds from late autumn until late winter.'
   },
   {
     name: 'Grassy field corners or blocks',
@@ -206,7 +206,7 @@ const getSfiData = () => [
     amountLabel: '£515 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-buffer-strips#ahl4-4m-to-12m-grass-buffer-strip-on-arable-and-horticultural-land',
     overview:
-      'Establish and maintain a grass strip on the edge of arable and horticultural land, so it buffers an existing landscape feature or certain heritage features. This will help you provide habitats for wildlife and manage pests. It\'ll also help prevent sediment and nutrients getting into water.'
+      "Establish and maintain a grass strip on the edge of arable and horticultural land, so it buffers an existing landscape feature or certain heritage features. This will help you provide habitats for wildlife and manage pests. It'll also help prevent sediment and nutrients getting into water."
   },
   {
     name: 'Take grassland field corners or blocks out of management',
@@ -216,7 +216,7 @@ const getSfiData = () => [
     amountLabel: '£333 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-improved-grassland#igl1-take-grassland-field-corners-or-blocks-out-of-management',
     overview:
-      'Leave grassland field corners or blocks unmanaged, so they\'re uncut and ungrazed. This will help you provide habitats to wildlife all year round and manage pests.'
+      "Leave grassland field corners or blocks unmanaged, so they're uncut and ungrazed. This will help you provide habitats to wildlife all year round and manage pests."
   },
   {
     name: 'Winter bird food on improved grassland',
@@ -236,7 +236,7 @@ const getSfiData = () => [
     amountLabel: '£235 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-buffer-strips#igl3-4m-to-12m-grass-buffer-strip-on-improved-grassland',
     overview:
-      'Establish and maintain a grass strip on the edge of improved grassland, so it buffers an existing landscape feature or certain heritage features. This will help you provide habitats for wildlife. It\'ll also help prevent sediment and nutrients getting into water.'
+      "Establish and maintain a grass strip on the edge of improved grassland, so it buffers an existing landscape feature or certain heritage features. This will help you provide habitats for wildlife. It'll also help prevent sediment and nutrients getting into water."
   },
   {
     name: 'Manage grassland with very low nutrient inputs (outside SDAs)',
