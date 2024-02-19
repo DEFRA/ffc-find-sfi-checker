@@ -8,6 +8,7 @@ const routes = [].concat(
   require('../routes/print'),
   require('../routes/submit-cookies'),
   require('../routes/cookies-page'),
+  require('../routes/accessibility'),
   require('../routes/static')
 )
 
