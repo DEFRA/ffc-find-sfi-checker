@@ -18,7 +18,7 @@ module.exports = {
             stack: response.data ? response.data.stack : response.stack
           })
 
-          return h.view('error-pages/500').code(payload.statusCode)
+          return h.view('500').code(payload.statusCode)
         }
 
         return h.continue
