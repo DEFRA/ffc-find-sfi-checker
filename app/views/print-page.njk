@@ -1,7 +1,6 @@
 {% extends "_layout.njk" %}
 
 {% from "components/list.njk" import filterList %}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block pageTitle %}
 Print - {{ serviceTitle }}
@@ -17,9 +16,7 @@ Print - {{ serviceTitle }}
           <a class="govuk-!-display-none-print govuk-link govuk-!-display-none" href="javascript:window.print();" id="printButton">Print this page</a>
         </div>
 
-        {{ govukInsetText({
-          text: "This service does not confirm you're eligible to apply for SFI."
-        }) }}
+        {% include 'components/eligibility-warning.njk' %}
       </div>
       <div class="govuk-grid-column-one-quarter govuk-!-text-align-right"></div>
     </div>

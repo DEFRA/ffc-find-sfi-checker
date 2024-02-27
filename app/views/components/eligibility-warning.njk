@@ -1,0 +1,12 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% set eligibleText %}
+<span>
+  This filtering tool does not confirm you're eligible to apply for SFI. 
+  <a class="govuk-link" target="_blank" href="https://www.gov.uk/guidance/what-to-do-before-you-apply-for-an-sfi-agreement">Read the SFI guidance to check if you're eligible and how you can apply.</a>
+</span>
+{% endset %}
+
+{{ govukInsetText({
+  html: eligibleText
+}) }}
