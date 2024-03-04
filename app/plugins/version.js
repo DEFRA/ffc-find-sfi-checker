@@ -13,6 +13,7 @@ module.exports = {
           request.response.source.manager._context
         ) {
           request.response.source.manager._context.version = config.version
+          request.response.source.manager._context.currentPage = request.path
         }
 
         return h.continue
