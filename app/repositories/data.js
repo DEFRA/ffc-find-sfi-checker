@@ -173,7 +173,7 @@ const getSfiData = () => [
     code: 'AHL1',
     landTypes: [LandType.ARABLE, LandType.TEMPORARY_GRASSLAND, LandType.HORTICULTURAL_CROPS],
     landTypeLabel: 'arable land including temporary grassland, horticultural permanent crops',
-    amountLabel: '£764 per hectare per year',
+    amountLabel: '£739 per hectare per year',
     url: 'https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl1-pollen-and-nectar-flower-mix',
     overview:
       'Establish and maintain blocks or strips of pollen and nectar flower mix that produce areas of flowering plants from late spring and during the summer. This will help you provide food for wildlife and manage pests.'
